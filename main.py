@@ -61,10 +61,10 @@ async def popular(message: types.Message):
 @dp.message_handler(text='Я забываю всех активных')
 async def cldtext(message: types.Message):
     if message.chat.id not in dtext:
-         await message.answer('Теперь я больще не помню, кто когда комментировал записи вашего канала')
+         await message.answer('Теперь я больше не помню, кто когда комментировал записи Вашего канала')
     else:
         dtext[message.chat.id].clear()
-        await message.answer('Теперь я больще не помню, кто когда комментировал записи вашего канала')
+        await message.answer('Теперь я больше не помню, кто когда комментировал записи Вашего канала')
 
 @dp.message_handler(text='Очистить словарь плохих слов')
 async def clbadwords(message: types.Message):
@@ -127,7 +127,7 @@ async def wordsname(message: types.Message, state: FSMContext):
 @dp.message_handler(text='Плохие слова')
 async def words(message: types.Message):
     await Form.word.set()
-    await message.reply("Введи слово, которое не хочешь видеть в канале")
+    await message.reply("Введите слово, которое не хочешь видеть в канале")
     
 @dp.message_handler(state=Form.word)
 async def process_name(message: types.Message, state: FSMContext):
